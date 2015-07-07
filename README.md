@@ -18,7 +18,7 @@ bash Anaconda3-2.3.0-Linux-x86_64.sh
 
 **1. PLINK**
 
-Quality control and calculation of ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml). Download the program to your home directory (or elsewhere) and update PATH:
+Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml). Download the program to your home directory (or elsewhere) and update PATH:
 
 ```
 cd $HOME
