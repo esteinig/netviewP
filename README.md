@@ -3,7 +3,7 @@
 
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix from genome-wide SNPs using a minimum spanning tree and mutual kNN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
-NetView P is currently under development and now uses scientific computing packages (`numpy, scipy, scikit-learn`) to provide additional configurations and to operate more efficiently than previous versions. The project has moved to GitHub to facilitate access to the source code and encourage improvements from the community. Installation of the appropriate environment and configuration of the pipeline are outlined below, with more detailed descriptions available in the manual and walktrough.
+NetView P is under development and now uses scientific computing packages (`numpy, scipy, scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Please note that the use of these packages (in particular the choice of nearest neighbour algorithm) can produce slightly different network topologies than previous versions of NetView P. Installation of the appropriate environment and configuration of the pipeline are outlined below, with more detailed descriptions available in the manual and walktrough. The project has moved to GitHub to facilitate access to the source code and encourage improvements from the community.
 
 ## Installation
 
