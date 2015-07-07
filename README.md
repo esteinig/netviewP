@@ -31,14 +31,6 @@ echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
 
 Graph visualization and analysis within the pipeline will be included in the next release. Visualizations can be done manually in [Cytoscape v3](http://www.cytoscape.org/download.php).
 
-**3. BioPython**
-
-Install BioPython for export of SNP data to BioPython SeqObjects or SeqAlignment (optional):
-
-```
-conda install biopython
-```
-
 ## Input
 
 **Data:**
