@@ -7,7 +7,7 @@ NetView P is under development and now uses scientific computing packages (`nump
 
 ## Installation
 
-The pipeline was tested in Python 3.4 on Ubuntu 14.04 LTS. Please see the manual for installation on Windows.
+The pipeline was tested in Python 3.4 on Ubuntu 14.04. Please see the manual for installation on Windows.
 
 We highly recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes packages used in Netview P and runs under both Windows and Linux. Once you have downloaded Anaconda:
 ```
