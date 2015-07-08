@@ -244,9 +244,9 @@ Input:
 * SNP matrix does no longer require population and individual columns (N x SNP).
 
 
-Bugs:
+Errors:
 
-We detected a bug in the calculation of Prims algorithm, which may produce slightly different topologies in older versions (< v.0.7). Since the algorithm is no longer supported and replaced by Kruskal, we recommend using the latest version of NetView P.
+We found a bug in the calculation of Prims algorithm, which may produce slightly different topologies in older versions (< v.0.7). Since the algorithm is no longer supported and replaced by Kruskal, we recommend using the latest version of NetView P.
 
 
 ##Citations:
