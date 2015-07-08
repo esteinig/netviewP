@@ -1,16 +1,16 @@
 #NetView P
-##v.0.7
------------------------------------------------------------------------------------------------
+###v.0.7
+
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
 NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
 
 ## Installation  
-<br />
+
 We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes all packages used in Netview P and runs under both Linux and Windows.
 
 ###**PLINK**
-<br />
+
 Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml).
 
 Download the program to your home directory (or elsewhere) and update PATH:
@@ -23,7 +23,7 @@ wget -O $HOME/plink.zip "http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1
 unzip plink.zip
 echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
 ```
-<br />
+
 **Windows**
 
 ```
@@ -35,18 +35,18 @@ Add your directory to systems variable 'Path' (separated by a semicolon):
 
 ```
 ###**Cytoscape**
-<br />
+
 Visualizations can be constructed in most graph visualization softwares. We frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). Visualization and community clustering will be available in the next release of NetView P. 
 
 ## Input
-<br />
+
 **Data:**
 
 * Files for [PLINK](http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml) (`.ped` `.map`) 
 * SNP (N x SNP) matrix
 * Distance (N x N) matrix
 
-<br />
+
 **Node Attributes:**
 
 Data attributes (`.csv`) ordered by N as in Data. One row per sample, column headers, first column contains IDs.
@@ -103,14 +103,14 @@ Node attributes can be any of the following:
 ## Outputs
 
 #### **project/networks:**
-<br />
+
 Network files formatted as weighted edges:
 `.edges`
 
 Node attribute files for networks:
 `.nat`
 #### **project/plink:**
-<br />
+
 Data files after QC: 
 `_plink_qc.ped` `_plink_qc.map`
 
@@ -124,12 +124,12 @@ ASD (1-IBS) distance matrix (if enabled, after QC):
 `_plink.mdist`
 
 #### **project/other:**
-<br />
+
 Updated node attributes (if samples were excluded in QC): 
 `_qc.csv`
 
 ## Examples
-<br />
+
 Run default NetView P with (tab-delimited) input file for PLINK:
 
 ```
@@ -187,7 +187,7 @@ netview.py -f oyster.dist -a oyster.csv -m --project oyster_matrix --prefix oyst
 ```
 
 ##Considerations
-<br />
+
 **k**
 
 The user-defined parameter *k* determines the number of mutual nearest neighbours and is essential to the resolution of the networks. There is currently no optimisation for *k* (Neuditschko et al. 2012). However the effect of the parameter on the network topologies offers a possibilty to investigate the networks at different levels of genetic similarity. A small value of *k* focuses on fine-scale structure (connecting fewer, genetically similar individuals), whereas a large value of *k* focuses on large-scale patterns of similarity (connecting more, genetically distant individuals) (see Neuditscho et al. 2012). 
@@ -211,7 +211,7 @@ The minimum spanning tree can be switched off to yield only communities connecte
 The choice of the visualization algorithm can strongly influence the final representation of the network topology. The layout should therefore be consistent between visualizations at different *k* and in comparative network analyses. We generally use the circular or organic layouts provided by yFiles in Cytoscape as recommended by Neuditschko et al. (2012).
 
 ##Updates
-<br />
+
 NetView P is under development and is subject to changes.
 
 **v.0.7**
@@ -224,7 +224,7 @@ Data structures processed with:
 * `scipy`
 * `scikit-learn`
 
-<br />
+
 New options:
 
 ```
@@ -237,24 +237,24 @@ New options:
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
 ```
-<br />
+
 Input:
 
 * Attribute file is now required and must be comma-delimited (`.csv`)
 * SNP matrix does no longer require population and individual columns (N x SNP).
 
-<br />
+
 Bugs:
 
 We detected a bug in the calculation of Prims algorithm, which may produce slightly different topologies in older versions (< v.0.7). Since the algorithm is no longer supported and replaced by Kruskal, we recommend using the latest version of NetView P.
 
 
 ##Citations:
-<br />
+
 Steinig et al. (2015) - NetView P: A network visualization tool to unravel complex population structure using genome-wide SNPs, Molecular Ecology Resources
 
 [Neuditschko et al. (2012)](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0048375) - NetView: A High-Definition Network-Visualization Approach to Detect Fine-Scale Population Structures from Genome-Wide Patterns of Variation, PLoS One
 
 ##Contact
-<br />
+
 <eikejoachim.steinig@my.jcu.edu.au>
