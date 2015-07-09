@@ -291,7 +291,7 @@ Errors:
 We found a bug in the calculation of Prims algorithm, which may produce slightly different topologies in older versions (< v.0.7). Since the algorithm is no longer supported and replaced by Kruskal, we recommend using the latest version of NetView P.
 
 
-##Citations:
+##Citations
 
 Steinig et al. (2015) - NetView P: A network visualization tool to unravel complex population structure using genome-wide SNPs, Molecular Ecology Resources
 
