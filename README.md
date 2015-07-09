@@ -5,6 +5,8 @@ NetView P is an implementation of the graph-based population structure visualiza
 
 NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
 
+###Table of Contents
+
 - [NetView P](#)
 	- [Installation](#)
 		- [PLINK](#)
