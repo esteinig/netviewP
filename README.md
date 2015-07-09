@@ -79,7 +79,7 @@ Node attributes can be any of the following:
 --hwe         Filter SNPs failing HWE at P > (default: 0.001)
 
 --distance    Distance calculated from SNP data (default: asd):
-              asd, hamming
+              asd, hamming, correlation...
 
 --algorithm   Choice of algorithm for nearest neighbour search (default: brute):
               auto, kd_tree, ball_tree, brute
@@ -97,19 +97,24 @@ Node attributes can be any of the following:
 --missing     Set missing character (default: 0)
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
---visual      Generate node attribute files, skips pipeline
+              
+--visual      Generate node attribute files (skips NetView and QC)
+--off         Switch off Netview and run only QC (requires --quality)
+--dist        Calculate distance matrix only (if --quality, after QC)
 
 ```
 ## Outputs
 
-#### **project/networks:**
+#### **/networks:**
 
 Network files formatted as weighted edges:
 `.edges`
 
+#### **/nodes:**
+
 Node attribute files for networks:
 `.nat`
-#### **project/plink:**
+#### **/plink:**
 
 Data files after QC: 
 `_plink_qc.ped` `_plink_qc.map`
@@ -123,7 +128,7 @@ Excluded sample IDs:
 ASD (1-IBS) distance matrix (if enabled, after QC): 
 `_plink.mdist`
 
-#### **project/other:**
+#### **/other:**
 
 Updated node attributes (if samples were excluded in QC): 
 `_qc.csv`
@@ -188,13 +193,19 @@ netview.py -f oyster.dist -a oyster.csv -m --project oyster_matrix --prefix oyst
 
 ##Considerations
 
-**k**
+**Data**
+
+NetView is designed for large data sets (n > 100-1k, SNPs > 10k-100k, see Neuditschko et al. 2012)  and has been tested on smaller data sets (n > 82, SNPs > 300). Care needs to be taken for heterogeneous population sizes and populations with n < 10 (see Neuditschko et al. 2012). A stepwise reduction in *k* (usually *k* < 10) can sometimes recover resolution for such datasets. Very small data sets should be avoided as the effect of a small number of individuals or populations has not been properly assessed.
+
+**Distance Metrics**
+
+The choice of genetic distance measure is crucial to the analysis, since it determines which nodes are connected by the minimum spanning tree and mk-NN. The default distance is the allele sharing distance (1 - Identity by Similarity) (`--distance-matrix` in PLINK). This does not work for haploid genotypes or other non-genetic data, for instance when constructing networks for ecological or biogeographical data. Hamming distance or any of the [supported metrics](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.spatial.distance.pdist.html) in `pdist` from `scipy` can be calculated instead. A pre-computed distance matrix can be used as input with `-m`. In this case, the pipeline will use the matrix directly for NetView. Future updates will implement additional genetic distance measures.
+
+**Nearest Neighbour**
 
 The user-defined parameter *k* determines the number of mutual nearest neighbours and is essential to the resolution of the networks. There is currently no optimisation for *k* (Neuditschko et al. 2012). However the effect of the parameter on the network topologies offers a possibilty to investigate the networks at different levels of genetic similarity. A small value of *k* focuses on fine-scale structure (connecting fewer, genetically similar individuals), whereas a large value of *k* focuses on large-scale patterns of similarity (connecting more, genetically distant individuals) (see Neuditscho et al. 2012). 
 
-We therefore highly recommend to explore the data in a range of *k*, although an empirical value has been suggested at *k* = 10 (see Neuditscho et al. 2012). It should be noted that the application of a simple machine learning algorithm such as the mutual nearest neighbour search is not rooted in established population models.
-
-**Nearest Neighbour**
+We therefore highly recommend to explore the data in a range of *k*, although a working empirical value has been suggested at *k* = 10 (see Neuditscho et al. 2012). It should be noted that the application of a simple machine learning algorithm such as the mutual nearest neighbour search is not rooted in established population models.
 
 Netview P implements the nearest neighbour search from `scikit-learn`. The choice of the algorithm can be relevant for large data sets and potentially affect the final network topology. The default mode in the pipeline is the brute force algorithm, for a detailed description and choice of K-D Tree or Ball Tree, an excellent [documentation] (http://scikit-learn.org/stable/modules/neighbors.html) is available for `NearestNeighbors`.
 
@@ -209,6 +220,17 @@ The minimum spanning tree can be switched off to yield only communities connecte
 **Visualization**
 
 The choice of the visualization algorithm can strongly influence the final representation of the network topology. The layout should therefore be consistent between visualizations at different *k* and in comparative network analyses. We generally use the circular or organic layouts provided by yFiles in Cytoscape as recommended by Neuditschko et al. (2012).
+
+##Future Implementations
+
+* Sun Grid Engine support for batch job submission
+* Additional genetic distance measures with `scipy.spatial.distance.pdist`
+* Summary statistics module
+* `BioPython` and [`Bio.PopGen.Genepop`](http://biopython.org/wiki/PopGen_Genepop)
+* PCA and [`Admixture`](https://www.genetics.ucla.edu/software/admixture/) for [PCA-InformativeIndividuals](https://livestockgenomics.files.wordpress.com/2014/04/markus-talk.pdf) (PCA-IIs)
+* Network visualization and analysis with [`cyREST`](https://github.com/idekerlab/cyREST/wiki) and [`iGraph`](http://igraph.org/python/)
+* Interactive data visualization using `MongoDB` and `D3` (Linux)
+
 
 ##Updates
 
@@ -236,6 +258,8 @@ New options:
 --missing     Set missing character (default: 0)
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
+--off         Switch off Netview and run only QC (requires --quality)
+--dist        Calculate distance matrix only (if --quality, after QC)
 ```
 
 Input:
