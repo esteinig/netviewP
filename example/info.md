@@ -5,12 +5,14 @@
 **Data:** `oyster.ped` `oyster.map`
 **Attributes:** `oyster.csv`
 
-N = 83
-SNPs = 999
+N = 83, SNPs = 999
 
 QC = Default
+
 Distance = ASD
+
 NN Algorithm = Brute
+
 Minimum Spanning Tree = ON
 
 Graphs:
