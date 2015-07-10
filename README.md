@@ -219,7 +219,7 @@ NetView is designed for large data sets (n > 100-1k, SNPs > 10k-100k) and has be
 
 **Quality Control**
 
-Uexpected similarity can occur between samples that share large proportions of missing data. Standard quality control with PLINK is recommended as outlined in Neuditschko et al. (2012).
+Unexpected similarity can occur between samples that share large proportions of missing data. Standard quality control with PLINK is recommended as outlined in Neuditschko et al. (2012).
 
 **Distance Metrics**
 
