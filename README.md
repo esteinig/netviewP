@@ -7,13 +7,19 @@ NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`
 
 ## Installation  
 
+NetView P has been tested on Ubuntu 14.04.
+
+###**Anaconda**
+
 We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes all packages used in Netview P and runs under both Linux and Windows.
 
 ###**PLINK**
 
 Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml).
 
-Download the program to your home directory (or elsewhere) and update PATH:
+Download the program to your home directory (or elsewhere).
+
+Update system (.profile) or user (.bshrc) PATH:
 
 **Linux**
 
@@ -28,12 +34,25 @@ echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
 
 ```
 System -> Advanced Sytem Settings -> Advanced -> Environmental Variables
+```
 
-Add your directory to systems variable 'Path' (separated by a semicolon): 
-
-... ;C:\Users\UserName\plink-1.07-x86_64
+Add your directory to systems (Path) or user (PATH) variable, separated by a semicolon: 
 
 ```
+[...] ;C:\Users\UserName\plink-1.07-x86_64
+```
+
+###**NetView P**
+
+Clone or download the archive and unzip. Make the script executable:
+
+```
+chmod +x netview.py
+```
+
+You can run the application from any directory, if you put the script into a directory in your PATH.
+
+
 ###**Cytoscape**
 
 Visualizations can be constructed in most graph visualization software. We frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). Visualization and community clustering will be available in the next release of NetView P. 
