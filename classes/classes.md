@@ -52,7 +52,6 @@
 `add_col`   initial columns in matrix   `int`
 
 
-
 **`writeData(file, f, sep='\t')`**
 
 `file`      out file name                 `str`
