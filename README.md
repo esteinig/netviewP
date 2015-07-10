@@ -1,11 +1,4 @@
-#NetView P
-###v.0.7
-
-NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
-
-NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
-
-###Table of Contents
+##Table of Contents
 
 - [NetView P](#)
 	- [Installation](#)
@@ -22,6 +15,13 @@ NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`
 	- [Updates](#)
 	- [Citations:](#)
 	- [Contact](#)
+
+#NetView P
+###v.0.7
+
+NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
+
+NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
 
 ## Installation  
 
@@ -118,7 +118,7 @@ Node attributes can be any of the following:
               
 --visual      Generate node attribute files (skips NetView and QC)
 --off         Switch off Netview and run only QC (requires --quality)
---dist        Calculate distance matrix only (if --quality, after QC)
+--matrix      Calculate distance matrix only (if --quality, after QC)
 
 ```
 ## Outputs
@@ -277,7 +277,7 @@ New options:
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
 --off         Switch off Netview and run only QC (requires --quality)
---dist        Calculate distance matrix only (if --quality, after QC)
+--matrix      Calculate distance matrix only (if --quality, after QC)
 ```
 
 Input:
