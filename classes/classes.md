@@ -35,7 +35,7 @@
 
 `netview_runs`            accessory       `int`
 
-`filetype`                accessory       `int`
+`filetype`                accessory       `str`
 
 #### Methods
 
