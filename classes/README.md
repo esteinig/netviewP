@@ -13,7 +13,7 @@
 
 `n`         number of samples             `int`
 
-`nSNP`      number of snps                `int`           stored as number of snp columns regardless of ploidy
+`nSNP`      number of snps                `int`         stored as number of snp columns regardless of ploidy
 
 `ids`       list of ids                   `list`
 
@@ -63,6 +63,45 @@
 ###`Analysis`
 
 Analysis class for distance calculation, NetView and PLINK.
+
+**Attributes**
+
+`data`      data class object             `Data`
+
+**Methods**
+
+**`getDistance(target='snps', distance='hamming')`**
+
+`target`    targets data.snps or .matrix  `str`         matrix, snps
+
+`distance`  distance to be calculated     `str`         asd (plink), pdist distances
+
+**`runPLINK(qc_parameters={}, commandstring='', asd=False, quality=False)`**
+
+`qc_parameters`  dictionary of qc parameters  `dict`    --mind, --maf, --geno, --hwe
+
+`commandstring`  commands for plink           `str`     overwrites asd and qc
+
+`asd`            calculate 1-IBS              `bool`    
+
+`quality`        run  quality control         `bool`
+
+**`runNetView(tree=True, start=10, stop=40, step=10, algorithm='auto')`**
+
+`tree`           include mst edges            `bool`
+
+`start`          start iterations k           `int`     netview operates on data.matrix
+
+`stop`           stop iterations k            `int`
+
+`step`           iterations at intervals      `int`
+
+`algorithm`      nearest neighbour search     `str`     auto, brute, kd_tree, ball_tree
+
+
+**`updateNodeAttributes(attribute_file)`**
+
+`attribute_file`  file containing node attributes `str`   updates file and data after qc with plink
 
 ###`CommandLine`
 
