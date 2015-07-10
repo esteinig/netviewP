@@ -1,21 +1,3 @@
-##Table of Contents
-
-- [NetView P](#)
-	- [Installation](#)
-		- [PLINK](#)
-		- [Cytoscape](#)
-	- [Input](#)
-	- [Configuration](#)
-		- [Required](#)
-		- [Options](#)
-	- [Outputs](#)
-	- [Examples](#)
-	- [Considerations](#)
-	- [Future Implementations](#)
-	- [Updates](#)
-	- [Citations:](#)
-	- [Contact](#)
-
 #NetView P
 ###v.0.7
 
