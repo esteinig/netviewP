@@ -54,7 +54,7 @@ Add your directory to systems variable 'Path' (separated by a semicolon):
 ```
 ###**Cytoscape**
 
-Visualizations can be constructed in most graph visualization softwares. We frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). Visualization and community clustering will be available in the next release of NetView P. 
+Visualizations can be constructed in most graph visualization software. We frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). Visualization and community clustering will be available in the next release of NetView P. 
 
 ## Input
 
