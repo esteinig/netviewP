@@ -1,5 +1,5 @@
 ##Example Files
-**Silver Lipped Pearl Oyster**
+**Silver-Lipped Pearl Oyster**
 
 *Pinctada maxima*
 
