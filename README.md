@@ -26,7 +26,7 @@ wget -O $HOME/plink.zip "http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1
 unzip plink.zip
 ```
 
-Update system (.profile) or user (.bshrc) PATH:
+Update system (.profile) or user (.bashrc) PATH:
 
 ```
 echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
@@ -46,14 +46,13 @@ Add your directory to systems (Path) or user (PATH) variable, separated by a sem
 
 ###**NetView P**
 
-Clone or download the archive and unzip. Make the script executable:
+Clone or download the archive and unzip. Make the script executable (Linux):
 
 ```
 chmod +x netview.py
 ```
 
-You can run the application from any directory, if you put the script into a directory in your PATH.
-
+If the script is in a directory in your PATH, you can run the application from any directory with your default Python interpreter (Anaconda). Remember to update the script with upcoming versions of NetView P.
 
 ###**Cytoscape**
 
