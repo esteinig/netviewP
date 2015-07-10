@@ -26,7 +26,7 @@ wget -O $HOME/plink.zip "http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1
 unzip plink.zip
 ```
 
-Update system (.profile) or user (.bashrc) PATH:
+Update system (.profile) or user (.bashrc) variable PATH:
 
 ```
 echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
