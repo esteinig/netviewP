@@ -215,7 +215,11 @@ netview.py -f oyster.dist -a oyster.csv -m --project oyster_matrix --prefix oyst
 
 **Data**
 
-NetView is designed for large data sets (n > 100-1k, SNPs > 10k-100k, see Neuditschko et al. 2012)  and has been tested on smaller data sets (n > 82, SNPs > 300). Care needs to be taken for heterogeneous population sizes and populations with n < 10 (see Neuditschko et al. 2012). A stepwise reduction in *k* (usually *k* < 10) can sometimes recover resolution for such datasets. Very small data sets should be avoided as the effect of a small number of individuals or populations has not been properly assessed.
+NetView is designed for large data sets (n > 100-1k, SNPs > 10k-100k) and has been tested on smaller data sets (n > 82, SNPs > 300). Care needs to be taken for heterogeneous population sizes and populations where n < 10 (see Neuditschko et al. 2012). A stepwise reduction in *k* (usually *k* < 10) can sometimes recover resolution for such datasets. Very small data sets should be avoided as the effect of a small number of individuals or populations has not been properly assessed.
+
+**Quality Control**
+
+Uexpected similarity can occur between samples that share large proportions of missing data. Standard quality control with PLINK is recommended as outlined in Neuditschko et al. (2012).
 
 **Distance Metrics**
 
