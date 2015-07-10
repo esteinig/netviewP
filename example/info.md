@@ -22,3 +22,4 @@ Minimum spanning tree edges in red. Edge thickness proportional to genetic dista
 Node colours show geographical origin (green = Aru Islands, blue = Bali, purple = West-Papua).
 Node sizes are proportional to degree centrality (NetworkAnalyzer in Cytsoscape)
 
+
