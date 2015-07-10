@@ -17,16 +17,18 @@ We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Pytho
 
 Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml).
 
-Download the program to your home directory (or elsewhere).
-
-Update system (.profile) or user (.bshrc) PATH:
+Download the program to your home directory (or elsewhere) and unzip:
 
 **Linux**
-
 ```
 cd $HOME
 wget -O $HOME/plink.zip "http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1.07-x86_64.zip"
 unzip plink.zip
+```
+
+Update system (.profile) or user (.bshrc) PATH:
+
+```
 echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
 ```
 
