@@ -5,6 +5,8 @@
 # Zenger Lab, JCU
 # https://github.com/esteinig/netview
 
+# Multiprocessing module for Windows
+
 import os
 import time
 import shutil
