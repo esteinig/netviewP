@@ -193,8 +193,7 @@ class CommandLine:
 
         self.parser = argparse.ArgumentParser(description='NetView P v0.7', add_help=True)
         self.setParser()
-        self.args = self.parser.parse_args(['-f', 'wolves.ped', '-p', '-a', 'wo.csv', '--project', 'Wolves (Cronin et al. 2015)',
-                                            '--prefix', 'wolves', '--sep', '\t', '--quality', '--stop', '50'])
+        self.args = self.parser.parse_args()
 
         self.arg_dict = vars(self.args)
 
