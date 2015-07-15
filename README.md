@@ -1,9 +1,15 @@
 #NetView P
-###v.0.7
+###v.0.7.1
 
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
 NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
+
+The networks can now be visualized in Firefox or Chrome:
+
+* [Silver-Lipped Pearl Oyster](http://htmlpreview.github.com/?https://github.com/esteinig/netview/tree/master/example/html/oyster/oyster_example.html)
+* [Grey Wolves](http://htmlpreview.github.com/?https://github.com/esteinig/netview/tree/master/example/html/wolf_example.html)
+* [European Hake](http://htmlpreview.github.com/?https://github.com/esteinig/netview/tree/master/example/html/hake_example.html)
 
 ## Installation  
 
@@ -30,6 +36,7 @@ Update system (.profile) or user (.bashrc) variable PATH:
 
 ```
 echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
+source .profile
 ```
 
 **Windows**
@@ -46,17 +53,32 @@ Add your directory to systems (Path) or user (PATH) variable, separated by a sem
 
 ###**NetView P**
 
-Clone or download the archive and unzip. Make the script executable (Linux):
+Clone or download the archive (side bar) and unzip in $HOME.
+
+If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda):
 
 ```
-chmod +x netview.py
+echo 'export PATH=$PATH:$HOME/netview-master/program/linux/0.7.1'  >> ~/.profile
+source .profile
 ```
 
-If the script is in a directory in your PATH, you can run the application from any directory with your default Python interpreter (Anaconda). Remember to update the script with upcoming versions of NetView P.
+Make the script executable (Linux):
 
-###**Cytoscape**
+```
+chmod +x $HOME/netview-master/program/linux/0.7.1/netview.py
+```
 
-Visualizations can be constructed in most graph visualization software. We frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). Visualization and community clustering will be available in the next release of NetView P. 
+Show help message:
+
+```
+netview.py --help
+```
+
+Remember to update PATH with upcoming versions of NetView P.
+
+###**Visualization**
+
+Simple visualizations are constructed with [`D3`](https://github.com/mbostock/d3/) and can be opened in Firefox or Chrome. For additional visualizations and analysis, we frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). 
 
 ## Input
 
@@ -69,12 +91,13 @@ Visualizations can be constructed in most graph visualization software. We frequ
 
 **Node Attributes:**
 
-Data attributes (`.csv`) ordered by N as in Data. One row per sample, column headers, first column contains IDs.
-Node attributes can be any of the following:
+Data attributes (`.csv`) ordered by N as in Data. One row per sample, column headers, first column contains IDs. No whitespaces in names or attributes. Node attributes can be any of the following:
 
 * Node descriptor string (ID, Population, Location...)
 * Node [shapes](http://js.cytoscape.org/#style/node-body) for Cytoscape 
 * Node [colour names](http://www.w3schools.com/html/html_colornames.asp) for Cytoscape
+
+Column headers must be (in order): id, pop, col, ...
               
 ## Configuration
 
@@ -85,6 +108,8 @@ Node attributes can be any of the following:
 -p            PLINK (.ped/.map)
 -s            SNP matrix (N x SNPs)
 -m            Distance Matrix (N x N)
+-n            Nexus format (from SPANDx)
+-r            RAxML format (from SPANDx)
 
 -a            Name of node attribute file (.csv), column headers, same order and 
               first column ID as IDs in PLINK / SNP matrix
@@ -117,7 +142,10 @@ Node attributes can be any of the following:
 --missing     Set missing character (default: 0)
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
-              
+
+--html        Write graphs as JSON and HTML (ON)
+--edges       Write graphs as edge lists (OFF)
+
 --visual      Generate node attribute files (skips NetView and QC)
 --off         Switch off Netview and run only QC (requires --quality)
 --matrix      Calculate distance matrix only (if --quality, after QC)
@@ -134,6 +162,15 @@ Network files formatted as weighted edges:
 
 Node attribute files for networks:
 `.nat`
+
+#### **/d3:**
+
+Networks formatted as JSON:
+`.json`
+
+Network visualizations with D3:
+`.html`
+
 #### **/plink:**
 
 Data files after QC: 
@@ -197,7 +234,7 @@ netview.py -f oyster.ped -a oyster.csv -p --project oyster --prefix test
            --algorithm kd_tree --stop 70 --visual
 ```
 
-Run haploid data (no PLINK), with missing character (NA):
+Run haploid data (or other non-genetic data) (no PLINK), with missing character (NA):
 
 ```
 netview.py -f staph.snps -a staph.csv -s --project staph --prefix staph
@@ -217,13 +254,15 @@ netview.py -f oyster.dist -a oyster.csv -m --project oyster_matrix --prefix oyst
 
 NetView is designed for large data sets (n > 100-1k, SNPs > 10k-100k) and has been tested on smaller data sets (n > 82, SNPs > 300). Care needs to be taken for heterogeneous population sizes and populations where n < 10 (see Neuditschko et al. 2012). A stepwise reduction in *k* (usually *k* < 10) can sometimes recover resolution for such datasets. Very small data sets should be avoided as the effect of a small number of individuals or populations has not been properly assessed.
 
+Writing the output graphs as edge lists (`--edges`) can take a long time for large data sets and has therefore been disabled by default. The edge files are needed for Cytoscape.
+
 **Quality Control**
 
 Unexpected similarity can occur between samples that share large proportions of missing data. Standard quality control with PLINK is recommended as outlined in Neuditschko et al. (2012).
 
 **Distance Metrics**
 
-The choice of genetic distance measure is crucial to the analysis, since it determines which nodes are connected by the minimum spanning tree and mk-NN. The default distance is the allele sharing distance (1 - Identity by Similarity) (`--distance-matrix` in PLINK). This does not work for haploid genotypes or other non-genetic data, for instance when constructing networks for ecological or biogeographical data. Hamming distance or any of the [supported metrics](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.spatial.distance.pdist.html) in `pdist` from `scipy` can be calculated instead. A pre-computed distance matrix can be used as input with `-m`. In this case, the pipeline will use the matrix directly for NetView. Future updates will implement additional genetic distance measures.
+The choice of genetic distance measure is crucial to the analysis, since it determines which nodes are connected by the minimum spanning tree and mk-NN. The default distance is the allele sharing distance (1 - Identity by Similarity) (`--distance-matrix` in PLINK). This does not work for haploid genotypes or other non-genetic data, for instance when constructing networks for ecological or biogeographical data. Hamming distance or any of the [supported metrics](http://docs.scipy.org/doc/scipy-0.15.1/reference/generated/scipy.spatial.distance.pdist.html) in `pdist` can be calculated instead. A pre-computed distance matrix can be used as input with `-m`. In this case, the pipeline will use the matrix directly for NetView. Future updates will implement additional genetic distance measures.
 
 **Nearest Neighbour**
 
@@ -245,20 +284,50 @@ The minimum spanning tree can be switched off to yield only communities connecte
 
 The choice of the visualization algorithm can strongly influence the final representation of the network topology. The layout should therefore be consistent between visualizations at different *k* and in comparative network analyses. We generally use the circular or organic layouts provided by yFiles in Cytoscape as recommended by Neuditschko et al. (2012).
 
+A simple [force-directed graph](http://bl.ocks.org/mbostock/4062045) with primary colour attribute, sample ids and population labels can be visualized in Firefox or Chrome. Open the `.html` file in your browser (requires `.json` to be located in the same directory):
+
+* zoom and pan
+* search the network for a sample id
+* click a node to highlight all neighbours
+* hover over a node to see sample id and population label
+
+For additional visualization layouts and network summaries we recommend Cytoscape.
+
 ##Future Implementations
 
-* Sun Grid Engine support for batch job submission
 * Additional genetic distance measures with `scipy.spatial.distance.pdist`
-* Summary statistics module
 * `BioPython` and [`Bio.PopGen.Genepop`](http://biopython.org/wiki/PopGen_Genepop)
 * PCA and [`Admixture`](https://www.genetics.ucla.edu/software/admixture/) for [PCA-InformativeIndividuals](https://livestockgenomics.files.wordpress.com/2014/04/markus-talk.pdf) (PCA-IIs)
 * Network visualization and analysis with [`cyREST`](https://github.com/idekerlab/cyREST/wiki) and [`iGraph`](http://igraph.org/python/)
-* Interactive data visualization using `MongoDB` and `D3` (Linux)
+* Interactive data visualization dashboards using `MongoDB` and `D3` (Linux)
 
 
 ##Updates
 
 NetView P is under development and is subject to changes.
+
+**v.0.7.1**
+
+The update includes some minor changes to the structure of the pipeline and visualization of the networks with `D3`. Nexus and RAxML import functions were included specifically for output from the comparative analysis pipeline for haploid whole genome data SPANDx ([Sarovich and Price 2014](http://www.biomedcentral.com/1756-0500/7/618)). Edges are not written by default as writing to disk can take a long time for large graphs.
+
+New options:
+
+```
+-n            Nexus format (from SPANDx)
+-r            RAxML format (from SPANDx)
+
+--html        Write graphs as JSON and HTML (ON)
+--edges       Write graphs as edge lists (OFF)
+```
+
+Input:
+
+* Attribute file must now have column headers (in order): id, pop, col ...
+
+Output:
+
+* Files for browser visualization (`.json`, `.html`)
+* Edge lists disabled by default (needs `--edges`)
 
 **v.0.7**
 
