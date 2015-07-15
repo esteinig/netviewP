@@ -86,7 +86,7 @@ Analysis class for distance calculation, NetView and PLINK.
 
 `quality`        run  quality control         `bool`
 
-**`runNetView(tree=True, start=10, stop=40, step=10, algorithm='auto')`**
+**`runNetView(tree=True, start=10, stop=40, step=10, algorithm='auto', edges=False, html=True)`**
 
 `tree`           include mst edges            `bool`
 
@@ -98,6 +98,9 @@ Analysis class for distance calculation, NetView and PLINK.
 
 `algorithm`      nearest neighbour search     `str`     auto, brute, kd_tree, ball_tree
 
+`edges`          write edge files             `bool`
+
+`html`           write browser viz            `bool`
 
 **`updateNodeAttributes(attribute_file)`**
 
