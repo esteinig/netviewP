@@ -7,9 +7,9 @@ NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`
 
 The networks can now be visualized in Firefox or Chrome:
 
-* [Silver-Lipped Pearl Oyster](http://htmlpreview.github.com/?https://github.com/esteinig/netview/example/html/oyster/oyster_example.html)
-* [Grey Wolves](http://htmlpreview.github.com/?https://github.com/esteinig/netview/example/html/wolf_example.html)
-* [European Hake](http://htmlpreview.github.com/?https://github.com/esteinig/netview/example/html/hake_example.html)
+* [Silver-Lipped Pearl Oyster](http://htmlpreview.github.io/?https://github.com/esteinig/netview/blob/master/example/html/oyster_example.html)
+* [Grey Wolves](http://htmlpreview.github.io/?https://github.com/esteinig/netview/blob/master/example/html/wolf_example.html)
+* [European Hake](http://htmlpreview.github.io/?https://github.com/esteinig/netview/blob/master/example/html/hake_example.html)
 
 ## Installation  
 
