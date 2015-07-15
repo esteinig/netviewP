@@ -633,7 +633,7 @@ class Data:
             if self.networks.keys() == '':
                 print('No networks to write to JSON.')
 
-            templ_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+            templ_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'templates')
             templ_file = open(os.path.join(templ_path, 'fd_network.html'))
             templ_str = templ_file.read()
             templ_file.close()
