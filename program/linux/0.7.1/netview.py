@@ -224,7 +224,7 @@ class CommandLine:
                                  help="Quality control in PLINK (OFF)")
         self.parser.add_argument('--distance', dest='distance', default='asd', type=str,
                                help="Distance measure for SNPs: hamming, asd, correlation... (asd)")
-        self.parser.add_argument('--algorithm', dest='algorithm', default='auto', type=str,
+        self.parser.add_argument('--algorithm', dest='algorithm', default='brute', type=str,
                                help="Algorithm for NN: auto, ball_tree, kd_tree, brute (brute)")
         self.parser.add_argument('--mst-off', dest='tree', action='store_false', default=True,
                                  help="Disable minimum spanning tree (OFF)")
