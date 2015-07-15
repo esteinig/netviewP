@@ -37,7 +37,7 @@ def main():
 
     print()
     print(get_time() + "\t" + "---------------------------------")
-    print(get_time() + "\t" + "         NETVIEW P v.0.7         ")
+    print(get_time() + "\t" + "         NETVIEW P v.0.7.1         ")
     print(get_time() + "\t" + "---------------------------------")
     print(get_time() + "\t" + "File =", commands.arg_dict['data_file'].upper())
 
@@ -191,7 +191,7 @@ class CommandLine:
 
     def __init__(self):
 
-        self.parser = argparse.ArgumentParser(description='NetView P v0.7', add_help=True)
+        self.parser = argparse.ArgumentParser(description='NetView P v.0.7.1', add_help=True)
         self.setParser()
         self.args = self.parser.parse_args()
 
