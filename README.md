@@ -104,8 +104,6 @@ Column headers must be (in order): id, pop, col, ...
 -p            PLINK (.ped/.map)
 -s            SNP matrix (N x SNPs)
 -m            Distance Matrix (N x N)
--n            Nexus format (from SPANDx)
--r            RAxML format (from SPANDx)
 
 -a            Name of node attribute file (.csv), column headers, same order and 
               first column ID as IDs in PLINK / SNP matrix
