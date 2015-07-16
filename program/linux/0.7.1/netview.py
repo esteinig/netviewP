@@ -50,7 +50,7 @@ def main():
     elif commands.arg_dict['nexus']:
         dat.filetype = 'nexus'
         dat.readData(commands.arg_dict['data_file'], f='nexus', sep=commands.arg_dict['sep'])
-    elif commands.arg_dict['snps']:
+    elif commands.arg_dict['raxml']:
         dat.filetype = 'raxml'
         dat.readData(commands.arg_dict['data_file'], f='raxml', sep=commands.arg_dict['sep'])
     else:
