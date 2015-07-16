@@ -347,9 +347,10 @@ class Data:
                     snps.append(content[1])
                 else:
                     header = content
-                    self.n = header[0]
-                    self.nSNP = header[1]
+                    self.n = int(header[0])
+                    self.nSNP = int(header[1])
             
+            snps = [[letter for letter in snp]for snp in snps]
             self.ids = ids
             self.snps = np.array(snps)
             self.filetype = 'raxml'
