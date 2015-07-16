@@ -57,7 +57,7 @@ source .bash_profile
 
 ###**NetView P**
 
-Clone or download the archive (side bar) and unzip in $HOME. If you clone the director it will simply be `netview` instead of `netview-master`.
+Clone or download the archive (side bar) and unzip in $HOME.
 
 If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda). See above for updating your PATH in Windows or OSX. Under Linux:
 
