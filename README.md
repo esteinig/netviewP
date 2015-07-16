@@ -59,7 +59,7 @@ source .bash_profile
 
 Clone or download the archive (side bar) and unzip in $HOME.
 
-If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda). See above for updating your PATH in Windows or OSX. Under Linux:
+If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda). See above for updating your PATH in Windows or OSX.
 
 Add the latest version directory to PATH:
 
