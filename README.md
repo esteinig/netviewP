@@ -3,7 +3,7 @@
 
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
-NetView P now uses scientific computing packages (`numpy` `scipy` `scikit-learn`) to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
+NetView P uses scientific computing packages to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
 
 The networks can now be visualized in Firefox or Chrome.
 
@@ -13,29 +13,27 @@ NetView P has been tested on Ubuntu 14.04.
 
 ###**Anaconda**
 
-We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes all packages used in Netview P and runs under both Linux and Windows.
+We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes all packages used in Netview P and runs under Linux, Windows and OSX.
 
 ###**PLINK**
 
 Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml).
 
-Download the program to your home directory (or elsewhere) and unzip:
+Download to $HOME or any other directory (examples given are in $HOME).
 
 **Linux**
+
+After downloading and unpacking, update user (.bashrc) variable PATH:
+
 ```
 cd $HOME
-wget -O $HOME/plink.zip "http://pngu.mgh.harvard.edu/~purcell/plink/dist/plink-1.07-x86_64.zip"
-unzip plink.zip
-```
-
-Update system (.profile) or user (.bashrc) variable PATH:
-
-```
-echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.profile
-source .profile
+echo 'export PATH=$PATH:$HOME/plink-1.07-x86_64'  >> ~/.bashrc
+source .bashrc
 ```
 
 **Windows**
+
+After downloading and unpacking, go to:
 
 ```
 System -> Advanced Sytem Settings -> Advanced -> Environmental Variables
@@ -44,21 +42,34 @@ System -> Advanced Sytem Settings -> Advanced -> Environmental Variables
 Add your directory to systems (Path) or user (PATH) variable, separated by a semicolon: 
 
 ```
-[...] ;C:\Users\UserName\plink-1.07-x86_64
+...;C:\Users\UserName\plink-1.07-dos
+```
+
+**OSX**
+
+After downloading and unpacking:
+
+```
+cd $HOME
+echo 'export PATH=$HOME/plink-1.07-mac-intel:$PATH' >> ~/.bash_profile
+source .bash_profile
 ```
 
 ###**NetView P**
 
-Clone or download the archive (side bar) and unzip in $HOME.
+Clone or download the archive (side bar) and unzip in $HOME. If you clone the director it will simply be `netview` instead of `netview-master`.
 
-If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda):
+If the directory is in your PATH, you can run the program from any directory with your default Python interpreter (Anaconda). See above for updating your PATH in Windows or OSX. Under Linux:
+
+Add the latest version directory to PATH:
 
 ```
-echo 'export PATH=$PATH:$HOME/netview-master/program/linux/0.7.1'  >> ~/.profile
+cd $HOME
+echo 'export PATH=$PATH:$HOME/netview-master/program/linux/0.7.1'  >> ~/.bashrc
 source .profile
 ```
 
-Make the script executable (Linux):
+Make the script executable:
 
 ```
 chmod +x $HOME/netview-master/program/linux/0.7.1/netview.py
@@ -93,8 +104,14 @@ Data attributes (`.csv`) ordered by N as in Data. One row per sample, column hea
 * Node [shapes](http://js.cytoscape.org/#style/node-body) for Cytoscape 
 * Node [colour names](http://www.w3schools.com/html/html_colornames.asp) for Cytoscape
 
-Column headers must be (in order): id, pop, col, ...
-              
+Column headers must be (in order):
+
+* `id`
+* `pop`
+* `col`
+
+See the oyster example files in `/example`.
+
 ## Configuration
 
 ##### Required
