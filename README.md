@@ -154,8 +154,8 @@ See the oyster example files in `/example`.
 --ploidy      Set ploidy of input data (default: diploid):
               haploid, diploid
 
---html        Write graphs as JSON and HTML (ON)
---edges       Write graphs as edge lists (OFF)
+--html        Write graphs as JSON and HTML (default: ON)
+--edges       Write graphs as edge lists (default: OFF)
 
 --visual      Generate node attribute files (skips NetView and QC)
 --off         Switch off Netview and run only QC (requires --quality)
@@ -327,8 +327,8 @@ New options:
 -n            Nexus format (from SPANDx)
 -r            RAxML format (from SPANDx)
 
---html        Write graphs as JSON and HTML (ON)
---edges       Write graphs as edge lists (OFF)
+--html        Write graphs as JSON and HTML (default: ON)
+--edges       Write graphs as edge lists (default: OFF)
 ```
 
 Input:
