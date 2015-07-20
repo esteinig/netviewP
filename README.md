@@ -201,6 +201,9 @@ ASD (1-IBS) distance matrix (if enabled, after QC):
 Updated node attributes (if samples were excluded in QC): 
 `_qc.csv`
 
+Distance matrix (with `--matrix`):
+`.dist`
+
 ## Examples
 
 Run default NetView P with (tab-delimited) input file for PLINK:
