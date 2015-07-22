@@ -713,7 +713,7 @@ class Data:
                         out.write("\n")
 
                 if len(mst_edges) == 0:
-                    singletons = np.setdiff1d(np.arange(self.n), edges.flatten()).tolist()
+                    singletons = np.setdiff1d(np.arange(self.n), properties[1].flatten()).tolist()
                     if singletons:
                         for node in singletons:
                             out.write(str(self.ids[node]) + '\n')
