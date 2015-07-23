@@ -307,6 +307,22 @@ A simple [force-directed graph](http://bl.ocks.org/mbostock/4062045) with primar
 
 For additional visualization layouts and network summaries we recommend Cytoscape.
 
+##Troubleshooting
+
+If you have tried and tried and things are not working out, feel free to send us a message. We will try and help as best as we can.
+
+**Web Visualization**
+
+The force-directed network loads the graph data from file, which can cause issues in Chrome. If you cannot see the networks in the browser, try the following.
+
+In the terminal, go to the directory that contains the visualization files (.../project/d3) and set up a local server with Python 3 on the standard port 8000:
+
+`python -m http.server`
+
+You should now be able to open the files in Chrome by going to:
+
+`http://localhost:8000/`
+
 ##Future Implementations
 
 * Additional genetic distance measures with `scipy.spatial.distance.pdist`
