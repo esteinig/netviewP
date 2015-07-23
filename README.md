@@ -313,9 +313,9 @@ If you have tried and tried and things are not working out, feel free to send us
 
 **Web Visualization**
 
-The force-directed network loads the graph data from file, which can cause issues in Chrome. If you cannot see the networks in the browser, try the following.
+The force-directed network loads the graph data from file, which can cause issues in Chrome. If you cannot see the networks in the browser, try setting up a local server. Eeven if you can load files normally, this is a nice way to make your visualizations available.
 
-In the terminal, go to the directory that contains the visualization files (.../project/d3) and set up a local server with Python 3 on the standard port 8000:
+In the terminal, go to the directory that contains the visualization files (.../project/d3) and set up a local server with Python 3 on the default port 8000:
 
 `python -m http.server`
 
