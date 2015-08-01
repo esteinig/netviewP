@@ -309,7 +309,7 @@ For additional visualization layouts and network summaries we recommend Cytoscap
 
 ##Troubleshooting
 
-If you have tried and tried and things are not working out, feel free to send us a message. We will try and help as best as we can.
+Feel free to send us a message, we will try and help as best as we can.
 
 **Web Visualization**
 
