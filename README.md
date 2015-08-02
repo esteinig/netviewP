@@ -5,7 +5,12 @@ NetView P is an implementation of the graph-based population structure visualiza
 
 NetView P uses scientific computing packages to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
 
-The networks can now be visualized in Firefox or Chrome.
+The networks can now be visualized in Firefox or Chrome:
+
+* [Gray Wolves](https://rawgit.com/esteinig/netview/master/example/html/wolf_example.html) from [Cronin et al. (2015)](http://www.uaf.edu/files/snre/Publications/Cronin/Cronin-et-al-Wolf-coyote--dog-SNP-variation-JOH-2015.pdf) (Journal of Heredity)
+* [European Hake](https://rawgit.com/esteinig/netview/master/example/html/hake_example.html) from [Milano et al. (2014)](http://onlinelibrary.wiley.com/doi/10.1111/mec.12568/abstract) (Molecular Ecology)
+* [Silver-lipped Pearl Oyster](https://rawgit.com/esteinig/netview/master/example/html/oyster_example.html) from [Steinig et al. (2015)](http://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12442/abstract) (Molecular Ecology Resources: Supplementary Materials)
+
 
 ## Installation  
 
