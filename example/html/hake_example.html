@@ -36,10 +36,8 @@
 }
 </style>
 <body>
-<script type='text/javascript' src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"> </script>
-<script type='text/javascript' src="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css"> </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
 
 var width = 1920,
@@ -65,7 +63,7 @@ var tip = d3.tip()
     .html(function (d) {return  d.name + "<br>" + d.group + "</br>"})
 svg.call(tip);
     
-d3.json("hake_example.json", function(error, graph) {
+d3.json('https://rawgit.com/esteinig/netview/master/example/html/hake_example.json', function(error, graph) {
   if (error) throw error;
     
   force
@@ -141,17 +139,6 @@ function connectedNodes() {
     }
 
 }
-});
-
-var optArray = [];
-for (var i = 0; i < graph.nodes.length - 1; i++) {
-    optArray.push(graph.nodes[i].name);
-}
-optArray = optArray.sort();
-$(function () {
-    $("#search").autocomplete({
-        source: optArray
-    });
 });
 
 function searchNode() {
