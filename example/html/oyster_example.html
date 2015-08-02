@@ -37,7 +37,7 @@
 </style>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script src="https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
 
 var width = 1920,
@@ -63,7 +63,7 @@ var tip = d3.tip()
     .html(function (d) {return  d.name + "<br>" + d.group + "</br>"})
 svg.call(tip);
     
-d3.json('https://github.com/esteinig/netview/blob/master/example/html/oyster_example.json', function(error, graph) {
+d3.json('esteinig/netview/blob/master/example/html/oyster_example.json', function(error, graph) {
   if (error) throw error;
     
   force
