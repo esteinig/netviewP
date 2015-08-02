@@ -3,9 +3,9 @@
 
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
-NetView P uses scientific computing packages to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to Github to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on Github.
+NetView P uses scientific computing packages to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to GitHub to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on GitHub.
 
-The networks can now be visualized in Firefox or Chrome:
+The networks can now be visualized in Firefox (see below for Chrome):
 
 * [Gray Wolves](https://rawgit.com/esteinig/netview/master/example/html/wolf_example.html) from [Cronin et al. (2015)](http://www.uaf.edu/files/snre/Publications/Cronin/Cronin-et-al-Wolf-coyote--dog-SNP-variation-JOH-2015.pdf) (Journal of Heredity)
 * [European Hake](https://rawgit.com/esteinig/netview/master/example/html/hake_example.html) from [Milano et al. (2014)](http://onlinelibrary.wiley.com/doi/10.1111/mec.12568/abstract) (Molecular Ecology)
