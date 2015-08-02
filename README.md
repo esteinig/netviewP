@@ -403,7 +403,7 @@ We found a bug in the calculation of Prims algorithm, which may produce slightly
 
 ##Citations
 
-Steinig et al. (2015) - NetView P: A network visualization tool to unravel complex population structure using genome-wide SNPs, Molecular Ecology Resources
+[Steinig et al. (2015)](http://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12442/abstract) - NetView P: A network visualization tool to unravel complex population structure using genome-wide SNPs, Molecular Ecology Resources
 
 [Neuditschko et al. (2012)](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0048375) - NetView: A High-Definition Network-Visualization Approach to Detect Fine-Scale Population Structures from Genome-Wide Patterns of Variation, PLoS One
 
