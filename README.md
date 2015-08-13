@@ -330,7 +330,7 @@ You should now be able to open the files in Chrome by going to:
 
 **Value Error**
 
-If you are getting a `ValueError: could not convert string to float` the most likely cause is the delimintation in the input file. The standard input is tab-delimited and you can change it with `--sep`, for example `--sep ''` or `--sep ','`.
+If you are getting a `ValueError: could not convert string to float` the most likely cause is the delimintation in the input file. The standard input is tab-delimited and you can change it with `--sep`, for example `--sep ' '` or `--sep ','`.
 
 ##Future Implementations
 
