@@ -318,7 +318,7 @@ Feel free to send us a message, we will try and help as best as we can.
 
 **Web Visualization**
 
-The force-directed network loads the graph data from file, which can cause issues in Chrome. If you cannot see the networks in the browser, try setting up a local server. Eeven if you can load files normally, this is a nice way to make your visualizations available.
+The force-directed network loads the graph data from file, which can cause issues in Chrome. If you cannot see the networks in the browser, try setting up a local server. Even if you can load files normally, this is a nice way to make your visualizations available.
 
 In the terminal, go to the directory that contains the visualization files (.../project/d3) and set up a local server with Python 3 on the default port 8000:
 
@@ -327,6 +327,10 @@ In the terminal, go to the directory that contains the visualization files (.../
 You should now be able to open the files in Chrome by going to:
 
 `http://localhost:8000/`
+
+**Value Error**
+
+If you are getting a `ValueError: could not convert string to float` the most likely cause is the delimintation in the input file. The standard input is tab-delimited and you can change it with `--sep`, for example `--sep ''` or `--sep ','`.
 
 ##Future Implementations
 
