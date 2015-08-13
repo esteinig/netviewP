@@ -400,6 +400,7 @@ class Data:
             matrix = np.array([list(map(float, ind)) for ind in content])
             
             self.matrix = matrix
+            self.n = len(matrix[0])
             self.matrices['input'] = matrix
 
             return matrix
