@@ -1,3 +1,8 @@
+A much more user-friendly version of NetView is now available for R. NetView P will still be maintained. However, the new version includes additional features like downloading files, visualizing networks and mapping networks onto geographical Maps with Leaflet:
+
+[NetView R](https://github.com/esteinig/netviewR)
+
+
 #NetView P
 ###v.0.7.1
 
