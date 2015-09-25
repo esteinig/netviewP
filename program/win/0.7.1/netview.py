@@ -243,8 +243,8 @@ class CommandLine:
 
         self.parser.add_argument('--html', dest='web', action='store_true', default=True,
                                  help="Generate D3/JSON graphs (ON)")
-        self.parser.add_argument('--edges', dest='edges', action='store_true', default=False,
-                                 help="Generate graphs as edge files (OFF)")
+        self.parser.add_argument('--edges', dest='edges', action='store_false', default=True,
+                                 help="Generate graphs as edge files (ON)")
 
         # PARAMETER Options
 
