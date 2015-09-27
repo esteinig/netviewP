@@ -1,10 +1,10 @@
-A much more user-friendly version of NetView is now available for R. NetView P will still be maintained. However, the new version includes additional features like downloading files, visualizing networks and mapping networks onto geographical Maps with Leaflet:
+A much more user-friendly version of NetView is now available for R. NetView P will still be maintained.
 
 [NetView R](https://github.com/esteinig/netviewR)
 
 Quick Fix [25.09.2015]:
 
-Edge files are now written to disk by default, there was some confusion over the empty network folder when not specifying '--edges'. This option was deactivated for medium to large networks as it can take some time to write edge files to disk when n > 500.
+Edge files are now written to disk by default, there was some confusion over the empty network folder when not specifying '--edges'.
 
 
 #NetView P
@@ -14,7 +14,7 @@ NetView P is an implementation of the graph-based population structure visualiza
 
 NetView P uses scientific computing packages to provide additional configurations and operate efficiently on large data sets. Installation of the appropriate environment and configuration of the pipeline are outlined below. The project has moved to GitHub to facilitate access to the source code and implement improvements from the community. If you find a bug or have any other questions, feel free to send us a message or use the issues function on GitHub.
 
-The networks can now be visualized in Firefox (see below for Chrome). Keep in mind that the interactive visualizations are intended to be viewed in the browser as a means of preliminary exploration. For publication-quality static images and more options in regards to analysis and network layouts please use your favourite software (Cytsocape, iGraph, Gephi...). We are currently working on a better solution for generating network visualizations from the output of NetView P.
+The networks can now be visualized in Firefox (see below for Chrome). Keep in mind that the interactive visualizations are intended to be viewed in the browser as a means of preliminary exploration. For publication-quality static images and more options in regards to analysis and network layouts please use your favourite software (Cytsocape, iGraph, Gephi...). 
 
 * [Gray Wolves](https://rawgit.com/esteinig/netview/master/example/html/wolf_example.html) from [Cronin et al. (2015)](http://www.uaf.edu/files/snre/Publications/Cronin/Cronin-et-al-Wolf-coyote--dog-SNP-variation-JOH-2015.pdf) (Journal of Heredity)
 * [European Hake](https://rawgit.com/esteinig/netview/master/example/html/hake_example.html) from [Milano et al. (2014)](http://onlinelibrary.wiley.com/doi/10.1111/mec.12568/abstract) (Molecular Ecology)
