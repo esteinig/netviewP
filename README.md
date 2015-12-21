@@ -79,14 +79,14 @@ Add the latest version directory to PATH:
 
 ```
 cd $HOME
-echo 'export PATH=$PATH:$HOME/netview-master/program/linux/0.7.1'  >> ~/.bashrc
-source .profile
+echo 'export PATH=$PATH:$HOME/netviewP-master/program/linux/0.7.1'  >> ~/.bashrc
+source .bashrc
 ```
 
 Make the script executable:
 
 ```
-chmod +x $HOME/netview-master/program/linux/0.7.1/netview.py
+chmod +x $HOME/netviewP-master/program/linux/0.7.1/netview.py
 ```
 
 Show help message:
