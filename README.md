@@ -1,4 +1,4 @@
-# netviewP
+# NetView P
 
 NetView for Python
 
