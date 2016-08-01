@@ -63,7 +63,7 @@ var tip = d3.tip()
     .html(function (d) {return  d.name + "<br>" + d.group + "</br>"})
 svg.call(tip);
     
-d3.json('https://rawgit.com/esteinig/netview/master/example/html/wolf_example.json', function(error, graph) {
+d3.json('https://rawgit.com/esteinig/netviewP/master/example/html/wolf_example.json', function(error, graph) {
   if (error) throw error;
     
   force
