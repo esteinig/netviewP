@@ -8,9 +8,9 @@ NetView P uses scientific computing packages to provide additional configuration
 
 The networks can now be visualized in Firefox (see below for Chrome). Keep in mind that the interactive visualizations are intended to be viewed in the browser as a means of preliminary exploration. For publication-quality static images and more options in regards to analysis and network layouts please use your favourite software (Cytsocape, iGraph, Gephi...). 
 
-* [Gray Wolves](https://rawgit.com/esteinig/netview/master/example/html/wolf_example.html) from [Cronin et al. (2015)](http://www.uaf.edu/files/snre/Publications/Cronin/Cronin-et-al-Wolf-coyote--dog-SNP-variation-JOH-2015.pdf) (Journal of Heredity)
-* [European Hake](https://rawgit.com/esteinig/netview/master/example/html/hake_example.html) from [Milano et al. (2014)](http://onlinelibrary.wiley.com/doi/10.1111/mec.12568/abstract) (Molecular Ecology)
-* [Silver-lipped Pearl Oyster](https://rawgit.com/esteinig/netview/master/example/html/oyster_example.html) from [Steinig et al. (2015)](http://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12442/abstract) (Molecular Ecology Resources: Supplementary Materials)
+* [Gray Wolves](https://rawgit.com/esteinig/netviewP/master/example/html/wolf_example.html) from [Cronin et al. (2015)](http://www.uaf.edu/files/snre/Publications/Cronin/Cronin-et-al-Wolf-coyote--dog-SNP-variation-JOH-2015.pdf) (Journal of Heredity)
+* [European Hake](https://rawgit.com/esteinig/netviewP/master/example/html/hake_example.html) from [Milano et al. (2014)](http://onlinelibrary.wiley.com/doi/10.1111/mec.12568/abstract) (Molecular Ecology)
+* [Silver-lipped Pearl Oyster](https://rawgit.com/esteinig/netviewP/master/example/html/oyster_example.html) from [Steinig et al. (2015)](http://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12442/abstract) (Molecular Ecology Resources: Supplementary Materials)
 
 
 ## Installation  
