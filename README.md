@@ -1,11 +1,3 @@
-A much more user-friendly version of NetView is now available for R. NetView P will still be maintained.
-
-[NetView R](https://github.com/esteinig/netviewR)
-
-Quick Fix [25.09.2015]:
-
-Edge files are now written to disk by default, there was some confusion over the empty network folder when not specifying '--edges'.
-
 
 #NetView P
 ###v.0.7.1
