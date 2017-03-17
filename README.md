@@ -1,6 +1,6 @@
 
-#NetView P
-###v.0.7.1
+# NetView P
+### v.0.7.1
 
 NetView P is an implementation of the graph-based population structure visualization NetView (Neuditschko et al. 2012) in Python. The pipeline generates networks based on a distance matrix derived from genome-wide SNPs using a minimum spanning tree and mutual k-NN. Networks can visualize large- and fine-scale patterns of population structure, including individual and family-level relationships in natural and captive populations.
 
@@ -17,11 +17,11 @@ The networks can now be visualized in Firefox (see below for Chrome). Keep in mi
 
 NetView P has been tested on Ubuntu 14.04.
 
-###**Anaconda**
+### **Anaconda**
 
 We recommend installing [Anaconda](http://continuum.io/downloads#py34) for Python 3.4. The distribution includes all packages used in Netview P and runs under Linux, Windows and OSX.
 
-###**PLINK**
+### **PLINK**
 
 Quality Control and ASD are computed in [PLINK v1.07](http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml).
 
@@ -61,7 +61,7 @@ echo 'export PATH=$HOME/plink-1.07-mac-intel:$PATH' >> ~/.bash_profile
 source .bash_profile
 ```
 
-###**NetView P**
+### **NetView P**
 
 Clone or download the archive (side bar) and unzip in $HOME.
 
@@ -89,7 +89,7 @@ netview.py --help
 
 Remember to update PATH with upcoming versions of NetView P.
 
-###**Visualization**
+### **Visualization**
 
 Simple visualizations are constructed with [`D3`](https://github.com/mbostock/d3/) and can be opened in Firefox or Chrome. For additional visualizations and analysis, we frequently use the open-source platform [Cytoscape v.3.2](http://www.cytoscape.org/download.php). 
 
@@ -268,7 +268,7 @@ netview.py -f oyster.dist -a oyster.csv -m --project oyster_matrix --prefix oyst
            --algorithm brute
 ```
 
-##Considerations
+## Considerations
 
 **Data**
 
@@ -313,7 +313,7 @@ A simple [force-directed graph](http://bl.ocks.org/mbostock/4062045) with primar
 
 For additional visualization layouts and network summaries we recommend Cytoscape.
 
-##Troubleshooting
+## Troubleshooting
 
 Feel free to send us a message, we will try and help as best as we can.
 
@@ -333,7 +333,7 @@ You should now be able to open the files in Chrome by going to:
 
 If you are getting a `ValueError: could not convert string to float` the most likely cause is the delimintation in the input file. The standard input is tab-delimited and you can change it with `--sep`, for example `--sep ' '` or `--sep ','`.
 
-##Future Implementations
+## Future Implementations
 
 * Additional genetic distance measures with `scipy.spatial.distance.pdist`
 * `BioPython` and [`Bio.PopGen.Genepop`](http://biopython.org/wiki/PopGen_Genepop)
@@ -342,7 +342,7 @@ If you are getting a `ValueError: could not convert string to float` the most li
 * Interactive data visualization dashboards using `MongoDB` and `D3` (Linux)
 
 
-##Updates
+## Updates
 
 NetView P is under development and is subject to changes.
 
@@ -406,12 +406,12 @@ Errors:
 We found a bug in the calculation of Prims algorithm, which may produce slightly different topologies in older versions (< v.0.7). Since the algorithm is no longer supported and replaced by Kruskal, we recommend using the latest version of NetView P.
 
 
-##Citations
+## Citations
 
 [Steinig et al. (2015)](http://onlinelibrary.wiley.com/doi/10.1111/1755-0998.12442/abstract) - NetView P: A network visualization tool to unravel complex population structure using genome-wide SNPs, Molecular Ecology Resources
 
 [Neuditschko et al. (2012)](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0048375) - NetView: A High-Definition Network-Visualization Approach to Detect Fine-Scale Population Structures from Genome-Wide Patterns of Variation, PLoS One
 
-##Contact
+## Contact
 
 <eikejoachim.steinig@my.jcu.edu.au>
